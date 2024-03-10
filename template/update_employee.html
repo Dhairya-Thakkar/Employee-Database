@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gloock&family=Kalnia:wght@500&family=Kanit:wght@800&family=Outfit&family=Poppins:wght@200&family=Raleway:wght@500&family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <title>Employee Stats</title>
+  </head>
+  <body>
+    <div class="main_form">
+      <form
+        name="edit"
+        action="{{ url_for('edit_emp' , id = id ) }}"
+        method="POST"
+      >
+        <div>
+          <label>Name</label>
+          <br />
+          <input
+            type="text"
+            name="fullname"
+            id="fullname"
+            value="{{employee[1]}}"
+          />
+        </div>
+
+        <div>
+          <label>Salary</label>
+          <br />
+          <input
+            type="text"
+            name="salary"
+            id="salary"
+            value="{{employee[2]}}"
+          />
+        </div>
+        <div>
+          <label>Phone number</label>
+          <br />
+          <input
+            type="text"
+            name="phone_numebr"
+            id="phone_numbr"
+            value="{{employee[3]}}"
+          />
+        </div>
+        <div>
+          <label>Work site</label>
+          <br />
+          <input
+            type="text"
+            name="work_site"
+            id="work_site"
+            value="{{employee[4]}}"
+          />
+        </div>
+        <div class="form-action-buttons">
+          <input
+            type="submit"
+            value="Submit"
+            class="button-30"
+            onclick="return isValid();"
+            onsubmit="return isValid();"
+          />
+        </div>
+      </form>
+    </div>
+    <script src="../static/index.js"></script>
+  </body>
+</html>

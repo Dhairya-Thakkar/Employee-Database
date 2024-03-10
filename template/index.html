@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gloock&family=Kalnia:wght@500&family=Kanit:wght@800&family=Outfit&family=Poppins:wght@200&family=Raleway:wght@500&family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <title>Home Page</title>
+  </head>
+  <body>
+    <div class="employee_table">
+      <table class="employee_table" id="employee_table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Phone Number</th>
+            <th>Work Site</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in employees %}
+          <tr>
+            <td>{{i[1]}}</td>
+            <td>{{i[2]}}</td>
+            <td>{{i[3]}}</td>
+            <td>{{i[4]}}</td>
+            <td>
+              <a href="{{ url_for('edit_emp',id = i[0]) }}"
+                ><button>Edit</button></a
+              >
+              <a href="{{ url_for('delete_emp',id = i[0]) }}"
+                ><button>Delete</button></a
+              >
+            </td>
+          </tr>
+          {%endfor%}
+        </tbody>
+      </table>
+    </div>
+    <br />
+    <a href="{{ url_for('add_emp') }}">
+      <button class="button-30">Add Employee</button></a
+    >
+  </body>
+</html>
